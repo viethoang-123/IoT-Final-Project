@@ -1,18 +1,19 @@
 **Tên dự án**: Hệ thống giám sát & cảnh báo sử dụng ESP32 + MQTT (EMQX)
 
- Môn học: Phát triển ứng dụng IoT 
+ Môn học: Phát triển ứng dụng IoT
+ 
  GV: TS. Nguyễn Anh Tuấn
 ##  1. Giới thiệu dự án
 
 Dự án xây dựng một hệ thống giám sát và cảnh báo thời gian thực dựa trên vi điều khiển ESP32, kết hợp các cảm biến:
 
-Dòng điện (ACS712)
+- Dòng điện (ACS712)
 
-Nhiệt độ (DS18B20)
+- Nhiệt độ (DS18B20)
 
-Rung động (MPU6050 – tính RMS)
+- Rung động (MPU6050 – tính RMS)
 
-Điện áp đầu vào
+- Điện áp đầu vào
 
 Dữ liệu được gửi tới EMQX Cloud MQTT Broker để hiển thị trên dashboard, đồng thời kích hoạt cơ chế cảnh báo & điều khiển relay khi có sự cố.
 
@@ -20,13 +21,13 @@ Dữ liệu được gửi tới EMQX Cloud MQTT Broker để hiển thị trên
 
 Trong các hệ thống thiết bị điện hoặc mô hình công nghiệp nhỏ, việc giám sát:
 
-Nhiệt độ
+- Nhiệt độ
 
-Dòng điện bất thường
+- Dòng điện bất thường
 
-Dao động mạnh
+- Dao động mạnh
 
-Điện áp mất ổn định
+- Điện áp mất ổn định
 
 là vô cùng quan trọng để phát hiện sớm sự cố như:
 
