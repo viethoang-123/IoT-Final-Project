@@ -1,11 +1,4 @@
-
-This directory is intended for PlatformIO Test Runner and project tests.
-
-Unit Testing is a software testing method by which individual units of
-source code, sets of one or more MCU program modules together with associated
-control data, usage procedures, and operating procedures, are tested to
-determine whether they are fit for use. Unit testing finds problems early
-in the development cycle.
-
-More information about PlatformIO Unit Testing:
-- https://docs.platformio.org/en/latest/advanced/unit-testing/index.html
+Mã nguồn firmware chạy trên ESP32 được phát triển bằng PlatformIO/Arduino, hướng đến tính ổn định, dễ bảo trì và tái sử dụng cho các dự án IoT khác.
+Hệ thống thu thập dữ liệu từ nhiều cảm biến (dòng điện, nhiệt độ, điện áp, rung động), xử lý cảnh báo và truyền dữ liệu thời gian thực lên EMQX MQTT Broker thông qua kết nối TLS bảo mật.
+Firmware ESP32 được thiết kế theo hướng module hóa, bảo mật và ổn định.
+Hệ thống hỗ trợ đo lường, cảnh báo và truyền dữ liệu MQTT thời gian thực, phù hợp cho các mô hình giám sát công nghiệp hoặc IoT ứng dụng thực tế.
