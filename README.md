@@ -1,4 +1,4 @@
-# **Tên dự án**: Hệ thống giám sát & cảnh báo sử dụng ESP32 + MQTT (EMQX)
+# Tên dự án: Hệ thống giám sát và cảnh báo sử dụng ESP32 + MQTT (EMQX)
 
  Môn học: Phát triển ứng dụng IoT
  
@@ -47,7 +47,7 @@ Từ đó cần một hệ thống:
 - Có khả năng tự động cảnh báo & ngắt tải
 
 Đây chính là xuất phát điểm của dự án.
-3. Kiến trúc tổng thể
+## 3. Kiến trúc tổng thể
 
 Hệ thống được chia thành các phần chính:
 
@@ -62,7 +62,7 @@ Hệ thống được chia thành các phần chính:
 - Cơ cấu chấp hành (relay, còi, LED) xử lý khi xảy ra cảnh báo
 
 Sơ đồ hoạt động tóm tắt:
-4. Sơ đồ phần cứng
+## 4. Sơ đồ phần cứng
 
 (Thêm hình vào phần này tùy theo tài liệu của bạn)
 
@@ -72,7 +72,7 @@ Sơ đồ đấu nối ESP32 – cảm biến – relay – còi
 
 Ảnh mô hình thực tế khi đã lắp ráp
 
-5. Quy trình thu thập và xử lý dữ liệu
+## 5. Quy trình thu thập và xử lý dữ liệu
 
 Hệ thống thực hiện:
 
@@ -94,7 +94,7 @@ Nếu bình thường → hệ thống hoạt động lại
 
 Tất cả trạng thái cũng được gửi lên MQTT.
 
-6. Xử lý MQTT
+## 6. Xử lý MQTT
 
 Firmware sử dụng kết nối bảo mật (TLS) và các chủ đề (topics) chính:
 
@@ -121,8 +121,7 @@ esp32/led/control
 esp32/reset/alarm
 
 Phần reconnect MQTT được viết lại để hoạt động ổn định, không làm treo vòng lặp.
-
-7. Demo
+## 7. Demo
 
 (Chỗ này bạn có thể thêm ảnh mô hình và link video nếu có)
 
@@ -134,7 +133,7 @@ Ví dụ:
 
 Video demo hệ thống hoạt động
 
-8. Kết quả đạt được
+## 8. Kết quả đạt được
 
 - Thu thập dữ liệu cảm biến ổn định
 
@@ -144,14 +143,14 @@ Video demo hệ thống hoạt động
 
 - Hệ thống có thể giám sát từ xa qua MQTT
 
-- Độ trễ truyền dữ liệu thấp
+- Tuy nhiên do thời gian làm còn ít nên dự án chưa hoàn thành chỉn chu, vẫn còn một vài sai xót như( chưa có hệ cố định cho motor, chưa đóng gói gọn gàng nên dễ gây nguy hiểm cho người thực hiện..) 
 
-9. Kết luận
+## 9. Kết luận
 
 Dự án hoàn thành đúng mục tiêu ban đầu.
 Hệ thống hoạt động tốt, có thể áp dụng cho mô hình giám sát động cơ nhỏ hoặc thí nghiệm IoT.
 
-Hướng phát triển thêm:
+Thời gian sau em sẽ cố gắng phát triển thêm: 
 
 - Bổ sung dashboard web chuyên nghiệp
 
