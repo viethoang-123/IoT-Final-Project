@@ -159,25 +159,26 @@ Nhờ đó, hệ thống hoạt động ổn định ngay cả khi Wi-Fi không 
 Ảnh dashboard hiển thị dữ liệu: 
 
 - Giao diện hiển thị nhiệt độ
-
-<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/6ee44950-fbb8-44f3-980d-bfca4c210ca8" />
+  
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/38ac37dd-b7ba-4484-a65b-1e138176be4f" />
 
 - Giao diện hiển thị dòng điện
 
-<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/46e784b3-214f-45f4-8730-3aa699506a24" />
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/9757d983-9c05-429c-88ae-e39ec703de87" />
 
-- Giao diện hiển thị điện áp 
+- Giao diện hiển thị điện áp
 
-<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/bf428be7-849e-4006-82c5-882ab55bd1ea" />
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/dced1ebc-150f-492b-9beb-d82fb9aead04" />
 
 - Giao diện hiển thị độ rung
 
-<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/e847c941-4018-4711-9447-bee779201746" />
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/ad80a086-d737-4805-ac6f-7f66347b62b8" />
+
 
 - Giao diện hiển thị trạng thái relay và button reset hệ thống khi đã khắc phục xong lỗi và muốn hệ thống hoạt động trở lại
 
-<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/01897558-be9f-49c0-baba-067371b04137" />
 
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/d27a0237-f7f2-434d-b3f5-a819d14ae8e3" />
 
 Để rõ hơn về hệ thống, mời mọi người theo dõi video demo hệ thống hoạt động dưới đây:
 
