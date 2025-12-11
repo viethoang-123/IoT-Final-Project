@@ -1,0 +1,1834 @@
+[
+    {
+        "id": "8e2af7e1cc9bc183",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "207199e52d226052",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c2391174bd136e63",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "c54e598c148b79a7",
+                "32b9ce02fc6f529e",
+                "c0b2e7697084e605"
+            ]
+        ]
+    },
+    {
+        "id": "4ffc94650a0e7d2a",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c2391174bd136e63",
+        "x": 770,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c0b2e7697084e605",
+        "type": "ui-chart",
+        "z": "8e2af7e1cc9bc183",
+        "group": "239ddfd436d28d4a",
+        "name": "",
+        "label": " Temperature chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "oC",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 8,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 490,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32b9ce02fc6f529e",
+        "type": "ui-gauge",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "group": "239ddfd436d28d4a",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 4,
+        "height": 5,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "oC",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "29",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "100",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 490,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c54e598c148b79a7",
+        "type": "debug",
+        "z": "8e2af7e1cc9bc183",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "767679213fb0b50a",
+        "type": "ui-chart",
+        "z": "8e2af7e1cc9bc183",
+        "group": "505ccddff39e6740",
+        "name": "current monitor char",
+        "label": " Currnent chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "A",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 8,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1660,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d79718d98ea258e",
+        "type": "ui-gauge",
+        "z": "8e2af7e1cc9bc183",
+        "name": "current monitor gauge",
+        "group": "505ccddff39e6740",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 4,
+        "height": 6,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": " Current gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "A",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1660,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72f12ceb8359553c",
+        "type": "debug",
+        "z": "8e2af7e1cc9bc183",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1620,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "3a4172f12c1a9e92",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/vin",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "06831ff0a244e723",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 1120,
+        "wires": [
+            [
+                "872aead0482e7cda",
+                "4e3d49a7ede0be22",
+                "59134ee76a6a377f"
+            ]
+        ]
+    },
+    {
+        "id": "ce6f8495247d7ac3",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/vin",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "06831ff0a244e723",
+        "x": 160,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "59134ee76a6a377f",
+        "type": "ui-chart",
+        "z": "8e2af7e1cc9bc183",
+        "group": "78ad20dafef70e6b",
+        "name": "Voltage monitor char",
+        "label": "Voltage chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "V",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 8,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 440,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e3d49a7ede0be22",
+        "type": "ui-gauge",
+        "z": "8e2af7e1cc9bc183",
+        "name": "voltage monitor gauge",
+        "group": "78ad20dafef70e6b",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 4,
+        "height": 6,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": " Voltage gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "V",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#e01f28",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#07a242",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 440,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "872aead0482e7cda",
+        "type": "debug",
+        "z": "8e2af7e1cc9bc183",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "bf8d82356ca4b352",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/vibration",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c981cfd958bc955a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1480,
+        "y": 300,
+        "wires": [
+            [
+                "d7a042377df72a1b",
+                "6b7058f4614f997b",
+                "80f80cce8ca158de"
+            ]
+        ]
+    },
+    {
+        "id": "cc7b27f0e3480648",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/vibration",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c981cfd958bc955a",
+        "x": 1480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "80f80cce8ca158de",
+        "type": "ui-chart",
+        "z": "8e2af7e1cc9bc183",
+        "group": "1a92c6c3b0d75d97",
+        "name": "vibration monitor char",
+        "label": " Vibration chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "g",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 8,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1740,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b7058f4614f997b",
+        "type": "ui-gauge",
+        "z": "8e2af7e1cc9bc183",
+        "name": "vibration monitor gauge",
+        "group": "1a92c6c3b0d75d97",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 4,
+        "height": 5,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": " Vibration gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "g",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1.5",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1750,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7a042377df72a1b",
+        "type": "debug",
+        "z": "8e2af7e1cc9bc183",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a2c2bfcef0a166af",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/current",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "27e76e6621d2de2e",
+        "x": 1360,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "59d654b1f80aea1c",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/current",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "27e76e6621d2de2e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1350,
+        "y": 1060,
+        "wires": [
+            [
+                "72f12ceb8359553c",
+                "1d79718d98ea258e",
+                "767679213fb0b50a"
+            ]
+        ]
+    },
+    {
+        "id": "cb9adae9a8aba88b",
+        "type": "ui-switch",
+        "z": "8e2af7e1cc9bc183",
+        "name": "LED",
+        "label": "Led state",
+        "group": "38e872704d5d9b96",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "bad6c74ac6134e44"
+            ]
+        ]
+    },
+    {
+        "id": "d002b53cecc848ca",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c2391174bd136e63",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "a1923626463b1f7e"
+            ]
+        ]
+    },
+    {
+        "id": "863d6cdb74f30c14",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/temperature",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c2391174bd136e63",
+        "x": 190,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bad6c74ac6134e44",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 2",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "4ffc94650a0e7d2a"
+            ]
+        ]
+    },
+    {
+        "id": "a1923626463b1f7e",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 3",
+        "func": "// esp32 gửi \"1\" hoặc \"0\"\nif (msg.payload == \"1\") {\n    msg.payload = true;      // bật switch\n}\nelse if (msg.payload == \"0\") {\n    msg.payload = false;     // tắt switch\n}\n// Trả về message để gửi đi qua MQTT\nreturn msg;\n// msg.payload = msg.payload === \"1\";\n// return msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "cb9adae9a8aba88b"
+            ]
+        ]
+    },
+    {
+        "id": "2433295a275c7758",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "06831ff0a244e723",
+        "x": 770,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "301bb3fb4701956e",
+        "type": "ui-switch",
+        "z": "8e2af7e1cc9bc183",
+        "name": "LED",
+        "label": "Led state",
+        "group": "765852894e4d7649",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 430,
+        "y": 940,
+        "wires": [
+            [
+                "ae081cc07ea9fa08"
+            ]
+        ]
+    },
+    {
+        "id": "4e2ed9b45820ad45",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "06831ff0a244e723",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 940,
+        "wires": [
+            [
+                "d2101a9d14ff1982"
+            ]
+        ]
+    },
+    {
+        "id": "ae081cc07ea9fa08",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 4",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 940,
+        "wires": [
+            [
+                "2433295a275c7758"
+            ]
+        ]
+    },
+    {
+        "id": "d2101a9d14ff1982",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 5",
+        "func": "// esp32 gửi \"1\" hoặc \"0\"\nif (msg.payload == \"1\") {\n    msg.payload = true;      // bật switch\n}\nelse if (msg.payload == \"0\") {\n    msg.payload = false;     // tắt switch\n}\n// Trả về message để gửi đi qua MQTT\nreturn msg;\n// msg.payload = msg.payload === \"1\";\n// return msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 940,
+        "wires": [
+            [
+                "301bb3fb4701956e"
+            ]
+        ]
+    },
+    {
+        "id": "72ba2d810487925a",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c981cfd958bc955a",
+        "x": 1910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "457db89425a890ae",
+        "type": "ui-switch",
+        "z": "8e2af7e1cc9bc183",
+        "name": "LED",
+        "label": "Led state",
+        "group": "fcbe4871d965f65a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1570,
+        "y": 140,
+        "wires": [
+            [
+                "7afb318de30c3fa2"
+            ]
+        ]
+    },
+    {
+        "id": "8c9dd2e6c52919f8",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c981cfd958bc955a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1280,
+        "y": 140,
+        "wires": [
+            [
+                "303da188250e9991"
+            ]
+        ]
+    },
+    {
+        "id": "7afb318de30c3fa2",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 6",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 140,
+        "wires": [
+            [
+                "72ba2d810487925a"
+            ]
+        ]
+    },
+    {
+        "id": "303da188250e9991",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 7",
+        "func": "// esp32 gửi \"1\" hoặc \"0\"\nif (msg.payload == \"1\") {\n    msg.payload = true;      // bật switch\n}\nelse if (msg.payload == \"0\") {\n    msg.payload = false;     // tắt switch\n}\n// Trả về message để gửi đi qua MQTT\nreturn msg;\n// msg.payload = msg.payload === \"1\";\n// return msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 140,
+        "wires": [
+            [
+                "457db89425a890ae"
+            ]
+        ]
+    },
+    {
+        "id": "c8fa9332525d1d6d",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "27e76e6621d2de2e",
+        "x": 1990,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d0ec5fd837158f06",
+        "type": "ui-switch",
+        "z": "8e2af7e1cc9bc183",
+        "name": "LED",
+        "label": "Led state",
+        "group": "1967495e365b5e75",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1650,
+        "y": 940,
+        "wires": [
+            [
+                "600c61b61cf70b99"
+            ]
+        ]
+    },
+    {
+        "id": "68bea6ea9c3acd2c",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/led/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "27e76e6621d2de2e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1360,
+        "y": 940,
+        "wires": [
+            [
+                "11fa1ff6b5e56c39"
+            ]
+        ]
+    },
+    {
+        "id": "600c61b61cf70b99",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 8",
+        "func": "if (msg.payload === true) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1800,
+        "y": 940,
+        "wires": [
+            [
+                "c8fa9332525d1d6d"
+            ]
+        ]
+    },
+    {
+        "id": "11fa1ff6b5e56c39",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 9",
+        "func": "// esp32 gửi \"1\" hoặc \"0\"\nif (msg.payload == \"1\") {\n    msg.payload = true;      // bật switch\n}\nelse if (msg.payload == \"0\") {\n    msg.payload = false;     // tắt switch\n}\n// Trả về message để gửi đi qua MQTT\nreturn msg;\n// msg.payload = msg.payload === \"1\";\n// return msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 940,
+        "wires": [
+            [
+                "d0ec5fd837158f06"
+            ]
+        ]
+    },
+    {
+        "id": "eaa399c11b35ffec",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/relay/state",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "06831ff0a244e723",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 760,
+        "y": 520,
+        "wires": [
+            [
+                "ae964ebfb3e82ad9"
+            ]
+        ]
+    },
+    {
+        "id": "b9252ebfdea5f5ad",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/relay/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "06831ff0a244e723",
+        "x": 1210,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "480bc9b5a51cb9da",
+        "type": "ui-switch",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "label": "relay control",
+        "group": "78db028a0eb4798c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "esp32/relay/control",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 1010,
+        "y": 520,
+        "wires": [
+            [
+                "b9252ebfdea5f5ad"
+            ]
+        ]
+    },
+    {
+        "id": "e8642577946aa01b",
+        "type": "ui-text",
+        "z": "8e2af7e1cc9bc183",
+        "group": "78db028a0eb4798c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "State motor",
+        "label": "State motor",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "",
+        "valueType": "str",
+        "x": 1210,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ae964ebfb3e82ad9",
+        "type": "function",
+        "z": "8e2af7e1cc9bc183",
+        "name": "function 11",
+        "func": "msg.payload = msg.payload == 1 ? \"ON (Motor Running)\" : \"OFF (Motor Stopped)\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 620,
+        "wires": [
+            [
+                "e8642577946aa01b"
+            ]
+        ]
+    },
+    {
+        "id": "6c5c4afa6b953596",
+        "type": "mqtt in",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/reset/alarm",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "06831ff0a244e723",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 870,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da8369cd181316bf",
+        "type": "mqtt out",
+        "z": "8e2af7e1cc9bc183",
+        "name": "",
+        "topic": "esp32/reset/alarm",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "06831ff0a244e723",
+        "x": 1290,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f4ee6c088df2b10b",
+        "type": "ui-button",
+        "z": "8e2af7e1cc9bc183",
+        "group": "78db028a0eb4798c",
+        "name": "",
+        "label": "Reset system ",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1080,
+        "y": 700,
+        "wires": [
+            [
+                "da8369cd181316bf"
+            ]
+        ]
+    },
+    {
+        "id": "c2391174bd136e63",
+        "type": "mqtt-broker",
+        "name": "Temp",
+        "broker": "nd022d10.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "239ddfd436d28d4a",
+        "type": "ui-group",
+        "name": "Temperature monitor ",
+        "page": "9c3de4204c38a4fd",
+        "width": 12,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "505ccddff39e6740",
+        "type": "ui-group",
+        "name": "Current monitor",
+        "page": "2d769810e195885a",
+        "width": 12,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "06831ff0a244e723",
+        "type": "mqtt-broker",
+        "name": "Voltage",
+        "broker": "nd022d10.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "78ad20dafef70e6b",
+        "type": "ui-group",
+        "name": "Voltage monitor",
+        "page": "7c37e445d8b7910f",
+        "width": 12,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c981cfd958bc955a",
+        "type": "mqtt-broker",
+        "name": "Vibration ",
+        "broker": "nd022d10.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1a92c6c3b0d75d97",
+        "type": "ui-group",
+        "name": "Vibration monitor",
+        "page": "77ddeceb156c85a7",
+        "width": 12,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "27e76e6621d2de2e",
+        "type": "mqtt-broker",
+        "name": "Current",
+        "broker": "nd022d10.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "38e872704d5d9b96",
+        "type": "ui-group",
+        "name": "Temperature monitor led",
+        "page": "9c3de4204c38a4fd",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "765852894e4d7649",
+        "type": "ui-group",
+        "name": "Voltage  monitor led ",
+        "page": "7c37e445d8b7910f",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fcbe4871d965f65a",
+        "type": "ui-group",
+        "name": "Vibration monitor led",
+        "page": "77ddeceb156c85a7",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1967495e365b5e75",
+        "type": "ui-group",
+        "name": "Current monitor led",
+        "page": "2d769810e195885a",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "78db028a0eb4798c",
+        "type": "ui-group",
+        "name": "Relay control",
+        "page": "e1f99b0ae8fe73f0",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9c3de4204c38a4fd",
+        "type": "ui-page",
+        "name": "Temperature",
+        "ui": "fc778df1e447266e",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6b9fe78df7495dab",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "2d769810e195885a",
+        "type": "ui-page",
+        "name": "Current",
+        "ui": "fc778df1e447266e",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6b9fe78df7495dab",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7c37e445d8b7910f",
+        "type": "ui-page",
+        "name": "Voltage monitor",
+        "ui": "fc778df1e447266e",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6b9fe78df7495dab",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "77ddeceb156c85a7",
+        "type": "ui-page",
+        "name": "Vibration monitor",
+        "ui": "fc778df1e447266e",
+        "path": "/page4",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6b9fe78df7495dab",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "e1f99b0ae8fe73f0",
+        "type": "ui-page",
+        "name": "System monitor",
+        "ui": "fc778df1e447266e",
+        "path": "/page5",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6b9fe78df7495dab",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "fc778df1e447266e",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "6b9fe78df7495dab",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#87e26e",
+            "primary": "#08b433",
+            "bgPage": "#f4e78a",
+            "groupBg": "#f4dd8a",
+            "groupOutline": "#0fd737"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "abee955cafe943bb",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.29.0"
+        }
+    }
+]
