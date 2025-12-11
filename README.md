@@ -64,36 +64,39 @@ Hệ thống được chia thành các phần chính:
 
 Sơ đồ hoạt động tóm tắt:
 ## 4. Sơ đồ phần cứng
+Sơ đồ mô phỏng qua fritzing
 
-(Thêm hình vào phần này tùy theo tài liệu của bạn)
-
-Sơ đồ mạch nguyên lý (schematic)
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/5256b21f-7653-4b00-96e0-a18dac28b76a" />
 
 Sơ đồ đấu nối ESP32 – cảm biến – relay – còi
 
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/ba38f6ec-6d91-40ef-a274-8cc404c6f7ee" />
+
 Ảnh mô hình thực tế khi đã lắp ráp
+
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/27e4ae13-0e35-4f21-bad2-028770e34df4" />
 
 ## 5. Quy trình thu thập và xử lý dữ liệu
 
 Hệ thống thực hiện:
 
-Đọc dòng điện qua ACS712
+- Đọc dòng điện qua ACS712
 
-Đo điện áp đầu vào qua chia áp
+- Đo điện áp đầu vào qua chia áp
 
-Đo nhiệt độ bằng DS18B20
+- Đo nhiệt độ bằng DS18B20
 
-Đo gia tốc 3 trục và tính RMS bằng MPU6050
+- Đo gia tốc 3 trục và tính RMS bằng MPU6050
 
-Gửi dữ liệu 2 giây/lần lên MQTT
+- Gửi dữ liệu 2 giây/lần lên MQTT
 
 Các giá trị sau khi đọc được đưa vào thuật toán kiểm tra ngưỡng:
 
-Nếu vượt mức → bật cảnh báo, ngắt relay
+- Nếu vượt mức → bật cảnh báo, ngắt relay
 
-Nếu bình thường → hệ thống hoạt động lại
+- Nếu bình thường → hệ thống hoạt động lại
 
-Tất cả trạng thái cũng được gửi lên MQTT.
+- Tất cả trạng thái cũng được gửi lên MQTT.
 
 ## 6. Xử lý MQTT
 
@@ -101,38 +104,53 @@ Firmware sử dụng kết nối bảo mật (TLS) và các chủ đề (topics)
 
 Publish:
 
-esp32/current
+- esp32/current
 
-esp32/power
+- esp32/power
 
-esp32/vin
+- esp32/vin
 
-esp32/temperature
+- esp32/temperature
 
-esp32/vibration
+- esp32/vibration
 
-esp32/relay/state
+- esp32/relay/state
 
 Subscribe:
 
-esp32/relay/control
+- esp32/relay/control
 
-esp32/led/control
+- esp32/led/control
 
-esp32/reset/alarm
+- esp32/reset/alarm
 
 Phần reconnect MQTT được viết lại để hoạt động ổn định, không làm treo vòng lặp.
 ## 7. Demo
 
-(Chỗ này bạn có thể thêm ảnh mô hình và link video nếu có)
+Ảnh dashboard hiển thị dữ liệu: 
 
-Ví dụ:
+- Giao diện hiển thị nhiệt độ
 
-Ảnh dashboard hiển thị dữ liệu
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/6ee44950-fbb8-44f3-980d-bfca4c210ca8" />
 
-Ảnh cảnh relay kích hoạt
+- Giao diện hiển thị dòng điện
 
-Video demo hệ thống hoạt động
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/46e784b3-214f-45f4-8730-3aa699506a24" />
+
+- Giao diện hiển thị điện áp 
+
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/bf428be7-849e-4006-82c5-882ab55bd1ea" />
+
+- Giao diện hiển thị độ rung
+
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/e847c941-4018-4711-9447-bee779201746" />
+
+- Giao diện hiển thị trạng thái relay và button reset hệ thống khi đã khắc phục xong lỗi và muốn hệ thống hoạt động trở lại
+
+<img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/01897558-be9f-49c0-baba-067371b04137" />
+
+
+Để rõ hơn về hệ thống, mời mọi người theo dõi video demo hệ thống hoạt động dưới đây: 
 
 ## 8. Kết quả đạt được
 
