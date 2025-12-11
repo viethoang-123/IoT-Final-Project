@@ -1,4 +1,5 @@
-# Tên dự án: Hệ thống giám sát và cảnh báo sử dụng ESP32 + MQTT (EMQX)
+# Hệ thống giám sát động cơ và cảnh báo sử dụng ESP32 + MQTT 
+
 
  Môn học: Phát triển ứng dụng IoT
  
