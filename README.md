@@ -100,31 +100,60 @@ Các giá trị sau khi đọc được đưa vào thuật toán kiểm tra ngư
 
 ## 6. Xử lý MQTT
 
-Firmware sử dụng kết nối bảo mật (TLS) và các chủ đề (topics) chính:
+Hệ thống sử dụng MQTT để truyền dữ liệu và nhận lệnh điều khiển từ dashboard.
 
-Publish:
+* Kết nối MQTT
 
-- esp32/current
+ESP32 kết nối đến MQTT Broker EMQX thông qua TLS bảo mật.
+Các thông tin như host, port, username và password được tách riêng vào namespace để dễ thay đổi.
 
-- esp32/power
+*  Gửi dữ liệu (Publish)
 
-- esp32/vin
+ESP32 gửi các thông số quan trọng lên MQTT, gồm:
 
-- esp32/temperature
+esp32/current — dòng điện
 
-- esp32/vibration
+esp32/power — công suất tiêu thụ
 
-- esp32/relay/state
+esp32/vin — điện áp đầu vào
 
-Subscribe:
+esp32/temperature — nhiệt độ
 
-- esp32/relay/control
+esp32/vibration — giá trị RMS rung động
 
-- esp32/led/control
+esp32/relay/state — trạng thái relay
 
-- esp32/reset/alarm
+Dashboard sẽ đọc các thông tin này để hiển thị cho người dùng.
 
-Phần reconnect MQTT được viết lại để hoạt động ổn định, không làm treo vòng lặp.
+* Nhận lệnh từ dashboard (Subscribe)
+
+Hệ thống lắng nghe các chủ đề:
+
+esp32/relay/control — bật / tắt relay
+
+esp32/led/control — bật / tắt đèn cảnh báo
+
+esp32/reset/alarm — xóa cảnh báo và kích hoạt lại hệ thống
+
+Khi có lệnh gửi xuống, callback MQTT sẽ phân tích và thực hiện:
+
+Nếu lệnh ON: kích hoạt relay hoặc bật đèn
+
+Nếu lệnh OFF: ngắt relay hoặc tắt đèn
+
+Nếu RESET: xóa toàn bộ trạng thái cảnh báo và khôi phục thiết bị
+
+*  Cơ chế reconnect
+
+Chương trình sử dụng cơ chế tự viết lại để đảm bảo:
+
+Không gây treo vòng lặp (không blocking)
+
+Tự động kết nối lại khi mạng chập chờn
+
+Chỉ reconnect trong khoảng thời gian hợp lý
+
+Nhờ đó, hệ thống hoạt động ổn định ngay cả khi Wi-Fi không tốt.
 ## 7. Demo
 
 Ảnh dashboard hiển thị dữ liệu: 
@@ -162,7 +191,7 @@ Phần reconnect MQTT được viết lại để hoạt động ổn định, k
 
 - Hệ thống có thể giám sát từ xa qua MQTT
 
-- Tuy nhiên do thời gian làm còn ít nên dự án chưa hoàn thành chỉn chu, vẫn còn một vài sai xót như( chưa có hệ cố định cho motor, chưa đóng gói gọn gàng nên dễ gây nguy hiểm cho người thực hiện..) 
+- Tuy nhiên do thời gian làm còn ít nên dự án chưa hoàn thành chỉn chu, vẫn còn một vài sai xót như( chưa có hệ cố định cho motor, chưa đóng gói gọn gàng nên dễ gây nguy hiểm cho người thực hiện...) 
 
 ## 9. Kết luận
 
