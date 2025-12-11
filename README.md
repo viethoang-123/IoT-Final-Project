@@ -14,7 +14,7 @@ Dự án xây dựng một hệ thống giám sát và cảnh báo thời gian t
 
 - Rung động (MPU6050 – tính RMS)
 
-- Điện áp đầu vào
+- Điện áp đầu vào( sử dụng mạch chia áp với 2 điện trở) 
 
 Dữ liệu được gửi tới EMQX Cloud MQTT Broker để hiển thị trên dashboard, đồng thời kích hoạt cơ chế cảnh báo & điều khiển relay khi có sự cố.
 
@@ -179,7 +179,10 @@ Nhờ đó, hệ thống hoạt động ổn định ngay cả khi Wi-Fi không 
 <img width="900" height="525" alt="Image" src="https://github.com/user-attachments/assets/01897558-be9f-49c0-baba-067371b04137" />
 
 
-Để rõ hơn về hệ thống, mời mọi người theo dõi video demo hệ thống hoạt động dưới đây: 
+Để rõ hơn về hệ thống, mời mọi người theo dõi video demo hệ thống hoạt động dưới đây:
+
+https://www.youtube.com/watch?v=rDVoaWS5qQI
+
 
 ## 8. Kết quả đạt được
 
