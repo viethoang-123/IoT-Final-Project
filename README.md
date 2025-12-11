@@ -1,4 +1,4 @@
-# Hệ thống giám sát động cơ và cảnh báo sử dụng ESP32 + MQTT 
+# Giám Sát Động Cơ Thông Minh Với ESP32
 
 
 ##  1. Giới thiệu dự án
