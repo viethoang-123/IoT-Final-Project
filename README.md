@@ -1,9 +1,6 @@
 # Hệ thống giám sát động cơ và cảnh báo sử dụng ESP32 + MQTT 
 
 
- Môn học: Phát triển ứng dụng IoT
- 
- GV: TS. Nguyễn Anh Tuấn
 ##  1. Giới thiệu dự án
 
 Dự án xây dựng một hệ thống giám sát và cảnh báo thời gian thực dựa trên vi điều khiển ESP32, kết hợp các cảm biến:
